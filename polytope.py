@@ -19,10 +19,12 @@ class Polytope:
 
     def addReflections(self):
         xReflection, yReflection = [], []
+        ## Reflect across x-axis
         for v in self.verts:
             x = v[0]
             y = v[1] * -1
             xReflection.append((x,y))
+        ## Reflect across y-axis
         for v in self.verts:
             x = v[0] * -1
             y = v[1]
