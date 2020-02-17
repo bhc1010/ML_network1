@@ -23,7 +23,7 @@ class Network:
             random.shuffle(training_data)
             mini_batches = [training_data[k:k + mini_batch_size] for k in range(0, n, mini_batch_size)]
             for mini_batch in mini_batches:
-                self.update_mini_batch(mini_batch, eta)
+                self.update_network(mini_batch, eta)
             # if test_data:
             #     print("Epoch {0}: {1} / {2}".format(j, self.evaluate(test_data), n_test))
             # else:
@@ -32,7 +32,7 @@ class Network:
         if test_data: self.success = self.evaluate(test_data)
         
 
-    def update_mini_batch(self, mini_batch, eta):
+    def update_network(self, mini_batch, eta):
 
         nabla_b = [np.zeros(b.shape) for b in self.biases]
         nabla_w = [np.zeros(w.shape) for w in self.weights]
